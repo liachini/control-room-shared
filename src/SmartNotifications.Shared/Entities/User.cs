@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
+using SCM.SmartNotifications.ApplicationCore.Shared.Interfaces;
 
-namespace SCM.SmartNotifications.Shared.Entities;
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
 public sealed record User : ITypeProvider
 {

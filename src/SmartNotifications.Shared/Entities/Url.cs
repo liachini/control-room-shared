@@ -1,4 +1,4 @@
-﻿namespace SCM.SmartNotifications.Shared.Entities;
+﻿namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
 public sealed record Url
 {

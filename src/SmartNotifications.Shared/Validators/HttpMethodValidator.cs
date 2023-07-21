@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using FluentValidation.Validators;
 
-namespace SCM.SmartNotifications.Shared.Validators;
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Validators;
 
 public class HttpMethodValidator<T> : PropertyValidator<T, string>
 {

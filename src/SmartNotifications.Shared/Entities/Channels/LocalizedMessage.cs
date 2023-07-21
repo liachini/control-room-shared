@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
+using SCM.SmartNotifications.ApplicationCore.Shared.Interfaces;
 
-namespace SCM.SmartNotifications.Shared.Entities.Channels;
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities.Channels;
 
 public sealed record LocalizedMessage : ITypeProvider
 {

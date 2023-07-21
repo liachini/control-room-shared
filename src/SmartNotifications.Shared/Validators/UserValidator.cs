@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
 using PhoneNumbers;
-using SCM.SmartNotifications.Shared.Entities;
+using SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
-namespace SCM.SmartNotifications.Shared.Validators;
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Validators;
 
 public class UserValidator : AbstractValidator<User>
 {

@@ -1,6 +1,6 @@
-﻿using SCM.SmartNotifications.Shared.Entities.Channels;
+﻿using SCM.SmartNotifications.ApplicationCore.Shared.Entities.Channels;
 
-namespace SCM.SmartNotifications.Shared.Interfaces;
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Interfaces;
 
 public interface IChannel : ITypeProvider
 {

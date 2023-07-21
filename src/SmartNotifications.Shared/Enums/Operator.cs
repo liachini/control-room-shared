@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Converters;
 
-namespace SCM.SmartNotifications.Shared.Enums;
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Enums;
 
 [JsonConverter(typeof(StringEnumConverter))]
 public enum Operator

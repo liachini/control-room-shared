@@ -1,4 +1,6 @@
-﻿namespace SCM.SmartNotifications.Shared.Entities.DataTypes;
+﻿using SCM.SmartNotifications.ApplicationCore.Shared.Interfaces;
+
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities.DataTypes;
 
 public abstract record DataType : ITypeProvider
 {

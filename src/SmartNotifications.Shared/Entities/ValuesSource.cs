@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Converters;
 
-namespace SCM.SmartNotifications.Shared.Entities;
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
 [JsonConverter(typeof(StringEnumConverter))]
 public enum ValuesSource

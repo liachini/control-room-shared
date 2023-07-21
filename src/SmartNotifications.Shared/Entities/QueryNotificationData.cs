@@ -1,7 +1,7 @@
 ﻿using NCrontab;
-using SCM.SmartNotifications.Shared.Converters;
+using SCM.SmartNotifications.ApplicationCore.Shared.Converters;
 
-namespace SCM.SmartNotifications.Shared.Entities;
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
 public sealed record QueryNotificationData : NotificationData
 {

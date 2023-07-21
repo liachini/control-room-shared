@@ -1,5 +1,7 @@
 ﻿
-namespace SCM.SmartNotifications.Shared.Entities;
+using SCM.SmartNotifications.ApplicationCore.Shared.Enums;
+
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
 public sealed record ScopeSettings
 {

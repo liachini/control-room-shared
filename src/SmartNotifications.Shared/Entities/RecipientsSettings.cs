@@ -1,4 +1,6 @@
-﻿namespace SCM.SmartNotifications.Shared.Entities;
+﻿using SCM.SmartNotifications.ApplicationCore.Shared.Interfaces;
+
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
 public sealed record RecipientsSettings : ITypeProvider
 {

@@ -1,7 +1,7 @@
 using NCrontab;
 using Newtonsoft.Json.Linq;
 
-namespace SCM.SmartNotifications.Shared.Converters;
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Converters;
 
 public class CrontabJsonConverter : JsonConverter<CrontabSchedule>
 {

@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <RootNamespace>SCM.SmartNotifications.Shared</RootNamespace>
+    <RootNamespace>SCM.SmartNotifications.ApplicationCore.Shared</RootNamespace>
     <PackageId>$(AssemblyName)</PackageId>
   </PropertyGroup>
 

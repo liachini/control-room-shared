@@ -1,4 +1,6 @@
-﻿namespace SCM.SmartNotifications.Shared.Entities.Channels;
+﻿using SCM.SmartNotifications.ApplicationCore.Shared.Interfaces;
+
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities.Channels;
 
 public sealed record WebhookChannel : IChannel
 {

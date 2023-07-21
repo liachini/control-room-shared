@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace SCM.SmartNotifications.Shared.Validators;
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Validators;
 
 public static class ValidatorExtensions
 {

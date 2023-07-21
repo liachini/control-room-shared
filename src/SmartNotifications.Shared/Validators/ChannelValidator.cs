@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using SCM.SmartNotifications.Shared.Entities.Channels;
+using SCM.SmartNotifications.ApplicationCore.Shared.Interfaces;
 
-namespace SCM.SmartNotifications.Shared.Validators;
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Validators;
 
 internal class ChannelValidator : AbstractValidator<IChannel>
 {
