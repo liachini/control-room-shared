@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartNotifications.Shared", "src\SmartNotifications.Shared\SmartNotifications.Shared.csproj", "{961118A2-3AFB-4185-ADC2-7FCE16150029}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartNotifications.Shared", "src\SmartNotifications.ApplicationCore.Shared\SmartNotifications.ApplicationCore.Shared.csproj", "{961118A2-3AFB-4185-ADC2-7FCE16150029}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8375B48A-79EE-4FBA-9BD4-E03B4F60E7D4}"
 EndProject
