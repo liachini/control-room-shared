@@ -19,5 +19,6 @@ public sealed record Notification : ITypeProvider, ISupportsDelete
     {
         return TTL > 0;
     }
+
     public string _Type { get; } = nameof(Notification);
 }

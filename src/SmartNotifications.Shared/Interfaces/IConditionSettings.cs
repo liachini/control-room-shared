@@ -1,4 +1,4 @@
-﻿namespace SCM.SmartNotifications.Shared.Entities;
+﻿namespace SCM.SmartNotifications.Shared.Interfaces;
 
 public interface IConditionSettings : ITypeProvider
 {
