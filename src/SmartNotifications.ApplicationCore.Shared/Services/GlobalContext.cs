@@ -1,6 +1,4 @@
-﻿using SCM.SmartNotifications.ApplicationCore.Shared.Entities;
-
-namespace SCM.SmartNotifications.ApplicationCore.Shared.Services;
+﻿namespace SCM.SmartNotifications.ApplicationCore.Shared.Services;
 
 public record GlobalContext
 {

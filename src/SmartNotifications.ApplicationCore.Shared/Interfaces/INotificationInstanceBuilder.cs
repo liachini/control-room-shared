@@ -1,5 +1,3 @@
-using SCM.SmartNotifications.ApplicationCore.Shared.Entities;
-
 namespace SCM.SmartNotifications.ApplicationCore.Shared.Interfaces;
 
 public interface INotificationInstanceBuilder

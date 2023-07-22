@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Globalization;
+﻿using System.Globalization;
 
 namespace SCM.SmartNotifications.ApplicationCore.Shared.Services;
 

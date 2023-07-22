@@ -1,6 +1,5 @@
 ﻿using FluentValidation;
 using PhoneNumbers;
-using SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
 namespace SCM.SmartNotifications.ApplicationCore.Shared.Validators;
 
