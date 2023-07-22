@@ -1,5 +1,4 @@
-﻿
-using SCM.SmartNotifications.ApplicationCore.Shared.Enums;
+﻿using SCM.SmartNotifications.ApplicationCore.Shared.Enums;
 
 namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 

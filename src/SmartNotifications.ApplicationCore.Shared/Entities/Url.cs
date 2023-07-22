@@ -6,7 +6,7 @@ public sealed record Url
     {
         Address = address;
         HttpMethod = httpMethod;
-        this.Parameters = Parameters??new Dictionary<string, object>();
+        this.Parameters = Parameters ?? new Dictionary<string, object>();
     }
 
     public Dictionary<string, object> Parameters { get; init; }

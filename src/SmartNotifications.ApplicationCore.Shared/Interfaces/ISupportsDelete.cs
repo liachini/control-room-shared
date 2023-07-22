@@ -1,4 +1,3 @@
-
 namespace SCM.SmartNotifications.ApplicationCore.Shared.Interfaces;
 
 public interface ISupportsDelete

@@ -25,4 +25,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\SmartNotifications.ApplicationCore.Shared\SmartNotifications.ApplicationCore.Shared.csproj" />
+    <ProjectReference Include="..\SmartNotifications.Tests.Utilities\SmartNotifications.Tests.Utilities.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -9,7 +9,6 @@ internal class ReportNotificationDataValidator : AbstractValidator<ReportNotific
     {
         Include(new NotificationDataValidator());
 
-        RuleFor(data => data.Name).NotEmpty();
 
         RuleFor(data => data.ApiUrl).NotEmpty();
 

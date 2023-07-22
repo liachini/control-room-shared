@@ -8,7 +8,7 @@ public sealed record RecipientsSettings : ITypeProvider
 
     public List<User> Users { get; set; }
 
-    public List<string> ExcludedUsers {get; set; }
+    public List<string> ExcludedUsers { get; set; }
 
     #region ITypeProvider
 

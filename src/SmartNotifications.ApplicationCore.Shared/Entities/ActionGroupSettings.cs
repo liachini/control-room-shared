@@ -2,7 +2,7 @@
 
 namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
-public sealed record ActionGroupSettings: ITypeProvider
+public sealed record ActionGroupSettings : ITypeProvider
 {
     public IList<IChannel> Channels { get; set; }
 

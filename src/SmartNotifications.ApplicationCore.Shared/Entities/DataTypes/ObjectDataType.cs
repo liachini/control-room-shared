@@ -1,4 +1,4 @@
-﻿namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities.DataTypes;
+﻿namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
 public sealed record ObjectDataType : DataType
 {

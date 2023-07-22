@@ -9,5 +9,4 @@ public sealed record Schedule
 
     [JsonConverter(typeof(CrontabJsonConverter))]
     public CrontabSchedule CronSchedule { get; set; }
-
 }

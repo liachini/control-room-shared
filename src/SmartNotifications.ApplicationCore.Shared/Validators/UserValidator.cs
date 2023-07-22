@@ -14,7 +14,8 @@ public class UserValidator : AbstractValidator<User>
         RuleFor(user => user.UserName).NotEmpty();
         RuleFor(user => user.Email).NotEmpty().EmailAddress();
         RuleFor(user => user).Must(user => ValidNumber(user.CountryCode, user.PhoneNumber)).When(user =>
-            !string.IsNullOrWhiteSpace(user.PhoneNumber) && !string.IsNullOrWhiteSpace(user.CountryCode)).WithMessage("Not valid phone number").OverridePropertyName(nameof(User.PhoneNumber));
+                !string.IsNullOrWhiteSpace(user.PhoneNumber) && !string.IsNullOrWhiteSpace(user.CountryCode))
+            .WithMessage("Not valid phone number").OverridePropertyName(nameof(User.PhoneNumber));
     }
 
     private static bool ValidNumber(string countryCode, string tel)

@@ -2,7 +2,7 @@
 
 namespace SCM.SmartNotifications.ApplicationCore.Shared.Validators;
 
-public class ParametersValidator : AbstractValidator<Dictionary<string,object>>
+public class ParametersValidator : AbstractValidator<Dictionary<string, object>>
 {
     public ParametersValidator()
     {
