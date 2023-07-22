@@ -4,7 +4,8 @@ namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
 public sealed record Notification : ITypeProvider, ISupportsDelete
 {
-    public string Name { get; set; }
+    public string Key { get; set; }
+
     public ScopeSettings Scope { get; set; }
 
     public NotificationData Data { get; set; }

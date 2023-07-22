@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <RootNamespace>SCM.SmartNotifications.ApplicationCore.Shared</RootNamespace>
     <PackageId>$(AssemblyName)</PackageId>
   </PropertyGroup>
@@ -12,8 +12,14 @@
     <PackageReference Include="FluentValidation" Version="11.6.0" />
     <PackageReference Include="JsonSubTypes" Version="2.0.1" />
     <PackageReference Include="libphonenumber-csharp" Version="8.13.16" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.6.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
     <PackageReference Include="NCrontab.Signed" Version="3.3.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

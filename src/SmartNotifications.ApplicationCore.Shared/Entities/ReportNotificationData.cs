@@ -2,7 +2,6 @@
 
 public sealed record ReportNotificationData : NotificationData
 {
-    public string Name { get; set; }
 
     /// <summary>
     ///     Remote url to invoke to retrieve data

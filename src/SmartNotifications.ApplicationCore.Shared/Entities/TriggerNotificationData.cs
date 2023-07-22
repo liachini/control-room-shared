@@ -5,11 +5,6 @@ namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 public sealed record TriggerNotificationData : NotificationData
 {
     /// <summary>
-    ///     Name of the item to monitor
-    /// </summary>
-    public string MonitoredItem { get; set; }
-
-    /// <summary>
     ///     The maximum number of times an alert is reported. If the number of times an alert is reported exceeds the specified
     ///     threshold, the alert is no longer reported.
     /// </summary>

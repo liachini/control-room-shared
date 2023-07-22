@@ -2,6 +2,8 @@
 
 public sealed record NotificationTemplate : BaseEntity
 {
+    public string Name { get; set; }
+
     public Dictionary<string, ParameterTemplate> Parameters { get; set; }
 
     public Notification Notification { get; set; }
