@@ -2,12 +2,18 @@
 
 namespace SCM.SmartNotifications.ApplicationCore.Shared.Validators;
 
+public class NotificationTemplateValidator : AbstractValidator<NotificationTemplate>
+{
+    public NotificationTemplateValidator()
+    {
+        RuleFor(template => template.Notification).SetValidator(new NotificationValidator());
+    }
+
+}
 public class NotificationValidator : AbstractValidator<Notification>
 {
     public NotificationValidator()
     {
-        RuleFor(notification => notification.Id).NotEmpty();
-
         RuleFor(notification => notification.Scope).NotEmpty().SetValidator(new ScopeSettingsValidator());
 
         RuleFor(model => model.Data).SetInheritanceValidator(validator =>

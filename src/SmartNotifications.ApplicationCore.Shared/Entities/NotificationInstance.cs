@@ -2,11 +2,11 @@
 
 public sealed record NotificationInstance : BaseEntity
 {
-    public string TemplateRefId { get; set; }
+    public string TemplateRefId { get; init; }
 
-    public Dictionary<string, object> Parameters { get; set; }
+    public Dictionary<string, object> Parameters { get; init; }
 
-    public Notification Notification { get; set; }
+    public Notification Notification { get; init; }
 
     public override string _Type { get; } = nameof(NotificationInstance);
 }

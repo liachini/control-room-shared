@@ -6,6 +6,7 @@
     <Nullable>disable</Nullable>
     <RootNamespace>SCM.SmartNotifications.ApplicationCore.Shared</RootNamespace>
     <PackageId>$(AssemblyName)</PackageId>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>

@@ -4,19 +4,17 @@ namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
 public sealed record Notification : ITypeProvider, ISupportsDelete
 {
-    public string Key { get; set; }
+    public string Key { get; init; }
 
-    public ScopeSettings Scope { get; set; }
+    public ScopeSettings Scope { get; init; }
 
-    public NotificationData Data { get; set; }
+    public NotificationData Data { get; init; }
 
-    public string Version { get; set; }
+    public string Version { get; init; }
 
-    public bool Enabled { get; set; }
+    public bool Enabled { get; init; }
 
-    public string Id { get; set; }
-
-    public long TTL { get; set; }
+    public long TTL { get; init; }
 
     public bool IsDeleted()
     {

@@ -4,11 +4,11 @@ namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
 public abstract record BaseEntity : ITypeProvider, ISupportsDelete
 {
-    [JsonProperty("id")] public string Id { get; set; } = Guid.NewGuid().ToString();
+    [JsonProperty("id")] public string Id { get; init; } = Guid.NewGuid().ToString();
 
-    public DateTimeOffset CreationDate { get; set; } = DateTimeOffset.UtcNow;
+    public DateTimeOffset CreationDate { get; init; } = DateTimeOffset.UtcNow;
 
-    public long TTL { get; set; }
+    public long TTL { get; init; }
 
     public bool IsDeleted()
     {
