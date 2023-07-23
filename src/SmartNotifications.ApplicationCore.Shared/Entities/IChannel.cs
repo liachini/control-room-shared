@@ -4,5 +4,6 @@ namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
 public interface IChannel : ITypeProvider
 {
-    public LocalizedMessage LocalizedMessage { get; set; }
+    bool Enabled { get; set; }
+    LocalizedMessage LocalizedMessage { get; set; }
 }
