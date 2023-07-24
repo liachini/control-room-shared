@@ -8,5 +8,7 @@ public sealed record NotificationInstance : BaseEntity
 
     public Notification Notification { get; init; }
 
+    public bool Enabled { get; init; }
+
     public override string _Type { get; } = nameof(NotificationInstance);
 }

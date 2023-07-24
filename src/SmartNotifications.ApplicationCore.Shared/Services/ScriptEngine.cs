@@ -1,10 +1,7 @@
 ﻿using System.Globalization;
 using System.Reflection;
-using System.Text;
 using Microsoft.CodeAnalysis.CSharp.Scripting;
 using Microsoft.CodeAnalysis.Scripting;
-using Microsoft.Extensions.Logging;
-using SCM.SmartNotifications.ApplicationCore.Shared.Interfaces;
 
 namespace SCM.SmartNotifications.ApplicationCore.Shared.Services;
 

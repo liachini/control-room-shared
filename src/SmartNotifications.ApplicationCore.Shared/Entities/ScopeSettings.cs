@@ -4,9 +4,9 @@ namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
 public sealed record ScopeSettings
 {
-    public ScopeSource Source { get; set; }
+    public ScopeSource Source { get; init; } = ScopeSource.None;
 
-    public Dictionary<string, object> Parameters { get; set; }
+    public Dictionary<string, object> Parameters { get; init; }
 
-    public List<object> SelectedScopes { get; set; }
+    public List<object> SelectedScopes { get; init; }
 }

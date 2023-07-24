@@ -1,5 +1,4 @@
 ﻿using SCM.SmartNotifications.ApplicationCore.Shared.Extensions;
-using SCM.SmartNotifications.ApplicationCore.Shared.Interfaces;
 
 namespace SCM.SmartNotifications.ApplicationCore.Shared.Services;
 

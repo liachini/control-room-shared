@@ -1,6 +1,4 @@
-﻿using SCM.SmartNotifications.ApplicationCore.Shared.Interfaces;
-
-namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
+﻿namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
 public abstract record BaseEntity : ITypeProvider, ISupportsDelete
 {

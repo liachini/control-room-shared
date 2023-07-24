@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace SCM.SmartNotifications.Processor.ApplicationCore;
+﻿namespace SCM.SmartNotifications.Processor.ApplicationCore;
 
 public static class SerializationExtensions
 {

@@ -2,12 +2,12 @@
 
 public sealed record NotificationTemplate : BaseEntity
 {
-    public string Name { get; set; }
-    public string Category { get; set; }
-    public string Description { get; set; }
+    public string Name { get; init; }
+    public string Category { get; init; }
+    public string Description { get; init; }
 
-    public Dictionary<string, ParameterTemplate> Parameters { get; set; }
-
-    public Notification Notification { get; set; }
+    public Dictionary<string, ParameterTemplate> Parameters { get; init; } = new Dictionary<string, ParameterTemplate>();
+    public Notification Notification { get; init; }
+    public Dictionary<string, string> Tags { get; init; } = new Dictionary<string, string>();
     public override string _Type { get; } = nameof(NotificationTemplate);
 }

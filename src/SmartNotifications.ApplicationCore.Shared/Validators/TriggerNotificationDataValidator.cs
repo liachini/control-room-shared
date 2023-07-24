@@ -8,5 +8,6 @@ internal class TriggerNotificationDataValidator : AbstractValidator<TriggerNotif
     {
         Include(new NotificationDataValidator());
         RuleFor(data => data.CheckSettings).NotEmpty();
+        RuleFor(data => data.Conditions).NotEmpty();
     }
 }

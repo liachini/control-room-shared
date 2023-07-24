@@ -1,6 +1,4 @@
-﻿using SCM.SmartNotifications.ApplicationCore.Shared.Interfaces;
-
-namespace SCM.SmartNotifications.ApplicationCore.Shared.Services;
+﻿namespace SCM.SmartNotifications.ApplicationCore.Shared.Services;
 
 public class ExpressionEvaluator : IExpressionEvaluator
 {
