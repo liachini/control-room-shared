@@ -2,5 +2,5 @@
 
 public interface IChannel : ITypeProvider
 {
-    bool Enabled { get; set; }
+    object Enabled { get; set; }
 }

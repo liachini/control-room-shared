@@ -5,6 +5,20 @@ namespace SCM.SmartNotifications.ApplicationCore.Shared.Extensions;
 
 public static class ObjectExtension
 {
+    public static bool IsScript(this object value)
+    {
+        return value is string && Convert.ToString(value)!.StartsWith("@");
+    }
+
+    public static string AddScriptPlaceholder(this string expression)
+    {
+        return !expression.StartsWith("@") ? $"@{expression}" : expression;
+    }
+    public static string ToExpression(this object expression)
+    {
+        return Convert.ToString(expression, CultureInfo.InvariantCulture).RemoveStringFromBeginning("@");
+    }
+
     public static bool IsNumeric(this object expression)
     {
         if (expression == null)

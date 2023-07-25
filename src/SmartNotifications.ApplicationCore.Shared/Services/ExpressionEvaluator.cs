@@ -1,4 +1,6 @@
-﻿namespace SCM.SmartNotifications.ApplicationCore.Shared.Services;
+﻿using SCM.SmartNotifications.ApplicationCore.Shared.Extensions;
+
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Services;
 
 public class ExpressionEvaluator : IExpressionEvaluator
 {
@@ -16,10 +18,10 @@ public class ExpressionEvaluator : IExpressionEvaluator
 
         foreach (KeyValuePair<string, object> keyValuePair in parameters)
         {
-            if (IsScript(keyValuePair.Value))
+            if (keyValuePair.Value.IsScript())
             {
                 results[keyValuePair.Key] =
-                    (await EvaluateAsync(keyValuePair.Value.ToString()[1..], context, cancellationToken))
+                    (await EvaluateAsync(keyValuePair.Value, context, cancellationToken))
                     .ToString();
                 continue;
             }
@@ -30,13 +32,12 @@ public class ExpressionEvaluator : IExpressionEvaluator
         return results;
     }
 
-    public Task<object> EvaluateAsync(string expression, object context, CancellationToken cancellationToken)
+    public async Task<object> EvaluateAsync(object expression, object context, CancellationToken cancellationToken)
     {
-        return _scriptEngine.EvaluateAsync<object>(expression, context, cancellationToken);
+        if (!expression.IsScript()) return expression;
+
+        return await _scriptEngine.EvaluateAsync<object>(expression.ToExpression(), context, cancellationToken);
     }
 
-    private static bool IsScript(object value)
-    {
-        return Convert.ToString(value)!.StartsWith("@");
-    }
+
 }

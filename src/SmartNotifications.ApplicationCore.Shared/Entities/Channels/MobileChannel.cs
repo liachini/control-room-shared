@@ -3,5 +3,5 @@
 public sealed record MobileChannel : IChannel
 {
     public string _Type => nameof(MobileChannel);
-    public bool Enabled { get; set; }
+    public object Enabled { get; set; }
 }

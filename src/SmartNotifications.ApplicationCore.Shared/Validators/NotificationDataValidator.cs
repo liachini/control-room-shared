@@ -8,5 +8,7 @@ internal class NotificationDataValidator : AbstractValidator<NotificationData>
     {
         RuleFor(data => data.ActionGroup).NotEmpty();
         RuleFor(data => data.ActionGroup).SetValidator(new ActionGroupSettingsValidator());
+
+
     }
 }

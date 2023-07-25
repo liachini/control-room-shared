@@ -17,7 +17,7 @@ public static class CommonExtensions
 
 
     public static IDictionary<string, object> ToDictionary(this string value, char keyValueSeparator = '=',
-        char itemSeparator = ';', char endValueSeparator = '-')
+        char itemSeparator = ';', char endValueSeparator = '@')
     {
         if (string.IsNullOrWhiteSpace(value)) return new Dictionary<string, object>();
 

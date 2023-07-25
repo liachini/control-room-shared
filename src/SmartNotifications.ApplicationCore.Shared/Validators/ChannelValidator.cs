@@ -8,3 +8,11 @@ internal class ChannelValidator : AbstractValidator<IChannel>
     {
     }
 }
+
+
+internal class CheckSettingsValidator : AbstractValidator<CheckSettings>
+{
+    public CheckSettingsValidator()
+    {
+    }
+}
