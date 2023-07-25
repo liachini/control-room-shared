@@ -13,6 +13,6 @@ public class ActionGroupSettingsValidator : AbstractValidator<ActionGroupSetting
             validator.Add(new SMSChannelValidator());
             validator.Add(new PushChannelValidator());
         });
-        RuleFor(settings => settings.Recipients).NotEmpty().SetValidator(new RecipientsSettingsValidator());
+        RuleFor(settings => settings.Recipients).SetValidator(new RecipientsSettingsValidator());
     }
 }

@@ -13,19 +13,3 @@ public static class UsersExtensions
         return cultureGroups;
     }
 }
-
-public static class StringExtensions
-{
-    public static bool IsNumber(this string value)
-    {
-        return double.TryParse(value, out _);
-    }
-
-    public static string RemoveStringFromBeginning(this string sourceString, string removeString)
-    {
-        int index = sourceString.IndexOf(removeString);
-        return index < 0
-            ? sourceString
-            : sourceString.Remove(index, removeString.Length);
-    }
-}

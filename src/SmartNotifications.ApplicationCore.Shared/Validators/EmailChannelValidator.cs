@@ -7,5 +7,7 @@ internal class EmailChannelValidator : AbstractValidator<EmailChannel>
     public EmailChannelValidator()
     {
         Include(new ChannelValidator());
+        RuleFor(channel => channel.LocalizedMessage).SetValidator(new LocalizedMessageValidator());
+
     }
 }

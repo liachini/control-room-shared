@@ -6,6 +6,5 @@ internal class ChannelValidator : AbstractValidator<IChannel>
 {
     public ChannelValidator()
     {
-        RuleFor(channel => channel.LocalizedMessage).SetValidator(new LocalizedMessageValidator());
     }
 }

@@ -6,6 +6,7 @@ internal class NotificationDataValidator : AbstractValidator<NotificationData>
 {
     public NotificationDataValidator()
     {
+        RuleFor(data => data.ActionGroup).NotEmpty();
         RuleFor(data => data.ActionGroup).SetValidator(new ActionGroupSettingsValidator());
     }
 }

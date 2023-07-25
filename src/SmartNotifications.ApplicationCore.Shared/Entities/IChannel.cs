@@ -3,5 +3,4 @@
 public interface IChannel : ITypeProvider
 {
     bool Enabled { get; set; }
-    LocalizedMessage LocalizedMessage { get; set; }
 }

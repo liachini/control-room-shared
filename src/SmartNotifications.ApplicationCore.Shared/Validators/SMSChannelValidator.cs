@@ -7,5 +7,6 @@ internal class SMSChannelValidator : AbstractValidator<SmsChannel>
     public SMSChannelValidator()
     {
         Include(new ChannelValidator());
+        RuleFor(channel => channel.LocalizedMessage).SetValidator(new LocalizedMessageValidator());
     }
 }
