@@ -6,7 +6,7 @@ public record CheckSettings : ITypeProvider
 
     public RateSettings RateLimit { get; set; }
     public RateSettings RateLimitByKey { get; set; }
-
+    
     /// <summary>
     ///     Number of subsequent checks that must be successful
     /// </summary>

@@ -26,7 +26,7 @@ public class NotificationBuilderInstance : INotificationInstanceBuilder
 
     private async Task<Notification> BuildNotification(Notification notification, Dictionary<string, object> parameters)
     {
-        return notification with {Key = await EvaluateKeyAsync(notification.Key, parameters)};
+        return notification with {Route = await EvaluateKeyAsync(notification.Route, parameters)};
     }
 
     private async Task<string> EvaluateKeyAsync(string key, Dictionary<string, object> parameters)

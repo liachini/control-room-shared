@@ -2,7 +2,7 @@
 
 public sealed record Notification : ITypeProvider
 {
-    public string Key { get; init; }
+    public string Route { get; init; }
 
     public ScopeSettings Scope { get; init; } = new ScopeSettings();
 
