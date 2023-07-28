@@ -14,14 +14,20 @@ public class ExpressionEvaluator : IExpressionEvaluator
     public async Task<Dictionary<string, object>> EvaluateAsync(Dictionary<string, object> parameters, object context,
         CancellationToken cancellationToken)
     {
+        if (parameters == null)
+        {
+            return new Dictionary<string, object>();
+        }
+
         Dictionary<string, object> results = new Dictionary<string, object>();
 
+        var dynamicContext = context.ToDynamic();
         foreach (KeyValuePair<string, object> keyValuePair in parameters)
         {
             if (keyValuePair.Value.IsScript())
             {
                 results[keyValuePair.Key] =
-                    (await EvaluateAsync(keyValuePair.Value, context, cancellationToken))
+                    (await InternalEvaluateAsync(keyValuePair.Value, dynamicContext, cancellationToken))
                     .ToString();
                 continue;
             }
@@ -34,10 +40,14 @@ public class ExpressionEvaluator : IExpressionEvaluator
 
     public async Task<object> EvaluateAsync(object expression, object context, CancellationToken cancellationToken)
     {
+
+        return await InternalEvaluateAsync(expression, context.ToDynamic(), cancellationToken);
+    }
+
+    private async Task<object> InternalEvaluateAsync(object expression, object context, CancellationToken cancellationToken)
+    {
         if (!expression.IsScript()) return expression;
 
         return await _scriptEngine.EvaluateAsync<object>(expression.ToExpression(), context, cancellationToken);
     }
-
-
 }

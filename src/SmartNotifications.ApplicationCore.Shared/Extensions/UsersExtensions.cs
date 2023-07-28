@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using SCM.SmartNotifications.ApplicationCore.Shared.Services;
 
 namespace SCM.SmartNotifications.ApplicationCore.Shared.Extensions;
 
@@ -12,4 +13,17 @@ public static class UsersExtensions
         IEnumerable<IGrouping<CultureInfo, User>> cultureGroups = userModels.GroupBy(u => u.Language);
         return cultureGroups;
     }
+}
+
+public static class UrlExtensions
+{
+    public static async Task<Url> EvaluateAsync(this Url url, IExpressionEvaluator expressionEvaluator, GlobalContext globalContext, CancellationToken cancellationToken)
+    {
+        return url with
+        {
+            Parameters = await expressionEvaluator.EvaluateAsync(url.Parameters, globalContext, cancellationToken),
+            Headers = await expressionEvaluator.EvaluateAsync(url.Headers, globalContext, cancellationToken),
+        };
+    }
+
 }

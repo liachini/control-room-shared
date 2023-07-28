@@ -1,4 +1,6 @@
-﻿namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
+﻿using SCM.SmartNotifications.ApplicationCore.Shared.Services;
+
+namespace SCM.SmartNotifications.ApplicationCore.Shared.Entities;
 
 public sealed record Url
 {
@@ -10,8 +12,9 @@ public sealed record Url
     }
 
     public Dictionary<string, object> Parameters { get; init; }
-    public Dictionary<string, string> Headers { get; init; } = new Dictionary<string, string>();
+    public Dictionary<string, object> Headers { get; init; } = new Dictionary<string, object>();
 
     public Uri Address { get; set; }
     public HttpMethod HttpMethod { get; set; } = HttpMethod.Get;
+
 }

@@ -1,5 +1,6 @@
 ﻿using System.Dynamic;
 using System.Globalization;
+using Newtonsoft.Json.Linq;
 
 namespace SCM.SmartNotifications.ApplicationCore.Shared.Extensions;
 
@@ -54,10 +55,44 @@ public static class ObjectExtension
         return JsonConvert.SerializeObject(o);
     }
 
+    public static string ToJson<TValue>(this Dictionary<string,TValue> o)
+    {
+
+        return o.ToJObject().ToString(Formatting.None);
+    }
+
+
+
     public static dynamic ToDynamic(this object context)
     {
         if (context is not string json) json = context.ToJson();
 
         return JsonConvert.DeserializeObject<ExpandoObject>(json)!;
+    }
+}
+
+public static class DictionaryExtensions
+{
+    public static JObject ToJObject<TValue>(this IDictionary<string, TValue> dictionary)
+    {
+        var root = new JObject();
+        foreach (var pair in dictionary)
+        {
+            var parts = pair.Key.Split('.');
+            var current = root;
+            for (int i = 0; i < parts.Length - 1; i++)
+            {
+                var part = parts[i];
+                var next = current[part] as JObject;
+                if (next == null)
+                {
+                    next = new JObject();
+                    current[part] = next;
+                }
+                current = next;
+            }
+            current[parts.Last()] = JToken.FromObject(pair.Value);
+        }
+        return root;
     }
 }

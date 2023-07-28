@@ -36,6 +36,6 @@ public class NotificationBuilderInstance : INotificationInstanceBuilder
             Parameters = parameters
         };
 
-        return await _expressionEvaluator.EvaluateAsync(key, globalContext.ToDynamic(), CancellationToken.None);
+        return (string) await _expressionEvaluator.EvaluateAsync(key, globalContext, CancellationToken.None);
     }
 }
