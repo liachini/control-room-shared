@@ -6,18 +6,21 @@ namespace SCM.SmartNotifications.ApplicationCore.Shared.Extensions;
 
 public static class ObjectExtension
 {
+    private const string scriptPlaceholder = "@";
+
     public static bool IsScript(this object value)
     {
-        return value is string && Convert.ToString(value)!.StartsWith("@");
+        return value is string && Convert.ToString(value)!.StartsWith(scriptPlaceholder);
     }
 
     public static string AddScriptPlaceholder(this string expression)
     {
-        return !expression.StartsWith("@") ? $"@{expression}" : expression;
+        return !expression.StartsWith(scriptPlaceholder) ? $"@{expression}" : expression;
     }
+
     public static string ToExpression(this object expression)
     {
-        return Convert.ToString(expression, CultureInfo.InvariantCulture).RemoveStringFromBeginning("@");
+        return Convert.ToString(expression, CultureInfo.InvariantCulture).RemoveStringFromBeginning(scriptPlaceholder);
     }
 
     public static bool IsNumeric(this object expression)
@@ -55,12 +58,10 @@ public static class ObjectExtension
         return JsonConvert.SerializeObject(o);
     }
 
-    public static string ToJson<TValue>(this Dictionary<string,TValue> o)
+    public static string ToJson<TValue>(this Dictionary<string, TValue> o)
     {
-
         return o.ToJObject().ToString(Formatting.None);
     }
-
 
 
     public static dynamic ToDynamic(this object context)
@@ -69,30 +70,44 @@ public static class ObjectExtension
 
         return JsonConvert.DeserializeObject<ExpandoObject>(json)!;
     }
-}
 
-public static class DictionaryExtensions
-{
+    public static bool TryConvertToDynamic(object context, out dynamic res)
+    {
+        try
+        {
+            res = context.ToDynamic();
+            return true;
+        }
+        catch (Exception e)
+        {
+            res = null;
+            return false;
+        }
+    }
+
     public static JObject ToJObject<TValue>(this IDictionary<string, TValue> dictionary)
     {
-        var root = new JObject();
-        foreach (var pair in dictionary)
+        JObject root = new JObject();
+        foreach (KeyValuePair<string, TValue> pair in dictionary)
         {
-            var parts = pair.Key.Split('.');
-            var current = root;
+            string[] parts = pair.Key.Split('.');
+            JObject current = root;
             for (int i = 0; i < parts.Length - 1; i++)
             {
-                var part = parts[i];
-                var next = current[part] as JObject;
+                string part = parts[i];
+                JObject next = current[part] as JObject;
                 if (next == null)
                 {
                     next = new JObject();
                     current[part] = next;
                 }
+
                 current = next;
             }
+
             current[parts.Last()] = JToken.FromObject(pair.Value);
         }
+
         return root;
     }
 }
