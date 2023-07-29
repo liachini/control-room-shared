@@ -14,8 +14,7 @@ public class TriggerNotificationValidatorTests
     {
         Notification notification = new Notification
         {
-            Id = "id",
-            Key = "TroubleShooting",
+            Route = "TroubleShooting",
             Scope = new ScopeSettings
             {
                 Source = ScopeSource.None,

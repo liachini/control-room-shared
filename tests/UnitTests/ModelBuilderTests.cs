@@ -118,7 +118,7 @@ public class ModelBuilderTests
         {
             CheckSettings = new CheckSettings()
             {
-                Count = 10,
+                HitCount = 10,
                 Duration = 300
             },
             Conditions = new List<IConditionSettings>()
@@ -143,7 +143,7 @@ public class ModelBuilderTests
 
         Notification r = new Notification
         {
-            Key = "ItemTest",
+            Route = "ItemTest",
 
             Scope = scopeSettings,
 
@@ -222,7 +222,7 @@ public class ModelBuilderTests
 
         Notification r = new Notification
         {
-            Key = "MachineAvailabiltyByOrganization",
+            Route = "MachineAvailabiltyByOrganization",
 
             Scope = scopeSettings,
 
@@ -304,7 +304,7 @@ public class ModelBuilderTests
         Notification r = new Notification
         {
             Scope = scopeSettings,
-            Key = "MachineAvailabiltyByOrganization",
+            Route = "MachineAvailabiltyByOrganization",
 
             Data = reportNotificationData
         };

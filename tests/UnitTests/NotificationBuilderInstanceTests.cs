@@ -12,18 +12,19 @@ public class NotificationBuilderInstanceTests
     [Fact]
     public async Task Build_WithParameters_ReplacePlaceholderWithValues()
     {
-        NotificationTemplate template = new NotificationTemplate();
-
         Dictionary<string, object> parameters = new Dictionary<string, object>
         {
             {"Name", "pippolo"},
             {"Threshold", 100}
         };
-        template.Notification = new Notification
+        NotificationTemplate template = new NotificationTemplate()
         {
-            Key = "@context.Parameters.Name",
+            Notification = new Notification
+            {
+                Route = "@context.Parameters.Name",
 
-            Data = new TriggerNotificationData()
+                Data = new TriggerNotificationData()
+            }
         };
 
 
@@ -36,6 +37,6 @@ public class NotificationBuilderInstanceTests
 
         notificationInstance.Parameters.Should().BeEquivalentTo(parameters);
 
-        notificationInstance.Notification.Key.Should().Be("pippolo");
+        notificationInstance.Notification.Route.Should().Be("pippolo");
     }
 }

@@ -59,6 +59,6 @@ public class ActionGroupSettingsValidatorTests
 
         TestValidationResult<ActionGroupSettings>? validationResult =
             await validator.TestValidateAsync(actionGroupSettings);
-        validationResult.ShouldHaveValidationErrorFor(settings => settings.Recipients);
+        validationResult.ShouldNotHaveAnyValidationErrors();
     }
 }

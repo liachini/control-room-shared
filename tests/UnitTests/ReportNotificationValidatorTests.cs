@@ -15,8 +15,7 @@ public class ReportNotificationValidatorTests
     {
         Notification notification = new Notification
         {
-            Id = "id",
-            Key = "MachineAvailabiltyByOrganization",
+            Route = "MachineAvailabiltyByOrganization",
             Scope = new ScopeSettings
             {
                 Source = ScopeSource.OrgByCountry,
