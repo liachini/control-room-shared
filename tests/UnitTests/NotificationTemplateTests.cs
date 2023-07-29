@@ -12,27 +12,29 @@ public class NotificationTemplateTests
     {
         Fixture fixture = new Fixture();
 
-        NotificationTemplate expected = new NotificationTemplate();
-        expected.Notification = new Notification
+        NotificationTemplate expected = new NotificationTemplate()
         {
-            Data = new TriggerNotificationData
+            Notification = new Notification
             {
-                CheckSettings = fixture.Create<CheckSettings>(),
-                ActionGroup = new ActionGroupSettings
+                Data = new TriggerNotificationData
                 {
-                    Recipients = fixture.Create<RecipientsSettings>(),
-                    Channels = new List<IChannel>
+                    CheckSettings = fixture.Create<CheckSettings>(),
+                    ActionGroup = new ActionGroupSettings
                     {
-                        new EmailChannel(),
-                        new MobileChannel(),
-                        new PushChannel(),
-                        new WebhookChannel()
+                        Recipients = fixture.Create<RecipientsSettings>(),
+                        Channels = new List<IChannel>
+                        {
+                            new EmailChannel(),
+                            new MobileChannel(),
+                            new PushChannel(),
+                            new WebhookChannel()
+                        }
+                    },
+                    Conditions = new List<IConditionSettings>
+                    {
+                        new OperatorConditionSettings(),
+                        new QueryConditionSettings()
                     }
-                },
-                Conditions = new List<IConditionSettings>
-                {
-                    new OperatorConditionSettings(),
-                    new QueryConditionSettings()
                 }
             }
         };
